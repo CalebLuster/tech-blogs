@@ -1,0 +1,19 @@
+<section class="new-post">
+    <button type="submit" class="button" id="new-post">Create Post!</button>
+</section>
+
+{{#if posts.length}}
+<section> 
+    <h2>Your Dashboards</h2>
+    <ul class="post-list">
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post}}
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Your Post</a>
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
+
+<script src="/public/javascript/create-post.js"></script>
